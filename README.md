@@ -63,3 +63,19 @@ ticketing-microservices/
 📌 Follow Along
 
 I will be updating this repo daily as I build the entire microservices platform.
+
+---
+### ✅ Current Progress (Day 2)
+
+- Added strongly-typed Mongoose user model using `UserAttrs`, `UserDoc`, and `UserModel`
+- Implemented secure password hashing in `pre('save')` middleware
+- Added industry-standard password validation (uppercase, lowercase, number, special character)
+- Fixed schema static methods (`userSchema.statics.build`) for type-safe user creation
+- Improved Auth service structure and JSON transformation for secure output
+- Cleaned and standardized `skaffold.yaml` using local image names
+- Verified Kubernetes setup: ingress-nginx running and routing correctly
+- Reset and rebuilt a fully clean local Docker + K8s environment for development stability
+
+---
+
+

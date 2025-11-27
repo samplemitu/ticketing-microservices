@@ -1,5 +1,8 @@
 import express, { Request, Response } from 'express';
-import { body, validationResult } from 'express-validator';
+import { body } from 'express-validator';
+import { User } from '../models/user';
+import jwt from 'jsonwebtoken';
+import { validateRequest } from '../middlewares/validate-result';
 
 const router = express.Router();
 
@@ -9,18 +12,50 @@ router.post(
     body('email').isEmail().withMessage('Not a valid e-mail address'),
     body('password')
       .trim()
-      .isLength({ min: 4, max: 6 })
-      .withMessage('Password should be at least 8 chars'),
-  ],
-  (req: Request, res: Response) => {
-    const errors = validationResult(req);
+      .isLength({ min: 8, max: 20 })
+      .withMessage('Password must be between 8 and 20 characters')
+      .matches(/[A-Z]/)
+      .withMessage('Password must contain at least one uppercase letter')
+      .matches(/[a-z]/)
+      .withMessage('Password must contain at least one lowercase letter')
+      .matches(/[0-9]/)
+      .withMessage('Password must contain at least one digit')
+      .matches(/[^A-Za-z0-9]/)
+      .withMessage('Password must contain at least one special character'),
+  ],validateRequest,
+  async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
-    if (!errors.isEmpty()) {
-      throw new Error('something went wrong');
+    // checking if user exist in our mongoose
+
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      throw new Error('User alredy in record');
     }
 
-    res.status(200).send({ email });
+    // if there is not user we create a new
+
+    const user = User.build({ email, password });
+    await user.save();
+
+    // issuing a new JWT token and will store in session time of login/signup
+
+    const userJWT = jwt.sign(
+      {
+        id: user.id,
+        email: user.email,
+      },
+      'ssss'
+    );
+
+    // we storing the jwt into session
+
+    req.session = {
+      jwt: userJWT,
+    };
+
+    res.status(201).send(user);
   }
 );
 
