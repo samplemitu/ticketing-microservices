@@ -3,6 +3,7 @@ import { body } from 'express-validator';
 import { User } from '../models/user';
 import jwt from 'jsonwebtoken';
 import { validateRequest } from '../middlewares/validate-result';
+import { BadRequestError } from '../errors/bad-request-error';
 
 const router = express.Router();
 
@@ -22,7 +23,8 @@ router.post(
       .withMessage('Password must contain at least one digit')
       .matches(/[^A-Za-z0-9]/)
       .withMessage('Password must contain at least one special character'),
-  ],validateRequest,
+  ],
+  validateRequest,
   async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
@@ -31,7 +33,7 @@ router.post(
     const existingUser = await User.findOne({ email });
 
     if (existingUser) {
-      throw new Error('User alredy in record');
+      throw new BadRequestError('Email in use');
     }
 
     // if there is not user we create a new
@@ -46,7 +48,7 @@ router.post(
         id: user.id,
         email: user.email,
       },
-      'ssss'
+      process.env.JWT_KEY!
     );
 
     // we storing the jwt into session

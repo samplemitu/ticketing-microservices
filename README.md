@@ -77,5 +77,51 @@ I will be updating this repo daily as I build the entire microservices platform.
 - Reset and rebuilt a fully clean local Docker + K8s environment for development stability
 
 ---
+✅ Current Progress (Day 3) — Auth Service Completed
+
+Today I completed the full Auth microservice, including all authentication flows and production-ready patterns:
+
+🔐 Authentication Features Finished
+
+Implemented Signup, Signin, Signout, and Current User routes
+
+Added JWT-based authentication using secure cookies
+
+Added industry-level password hashing & validation
+
+Implemented currentUser & requireAuth middlewares
+
+Added complete error-handling system with CustomError classes
+
+Added input validation & request sanitization
+
+Setup MongoDB connection using Kubernetes DNS
+
+Injected environment variables (JWT_KEY, MONGO_URI) the correct way
+
+Built type-safe models using Mongoose + TypeScript interfaces
+
+Added strict request types & global request augmentation
+
+🧱 Infrastructure Completed
+
+Cleaned up skaffold.yaml
+
+Correct Kubernetes Deployment for Auth service
+
+Added MongoDB Deployment & Service
+
+Configured JWT secret via Kubernetes Secrets
+
+Verified pods restart behavior + cluster stability
+
+Static image name setup (auth-service) for fast local rebuilds
+
+🌐 Routes Completed
+
+POST   /api/users/signup
+POST   /api/users/signin
+POST   /api/users/signout
+GET    /api/users/currentuser
 
 

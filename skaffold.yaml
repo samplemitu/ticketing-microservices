@@ -7,7 +7,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: rallycoding/auth
+    - image: auth-service
       context: auth
       docker:
         dockerfile: Dockerfile
