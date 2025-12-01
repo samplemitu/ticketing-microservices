@@ -1,30 +1,14 @@
-# ticketing-microservices
-A production-grade, event-driven microservices application.
+# Ticketing-microservices Project
 
-Ticketing Microservices Platform (In Progress)
+## A production-grade, event-driven ticketing platform built with a microservices architecture.
 
-A production-grade, event-driven ticketing platform built with a microservices architecture.
-This project is part of my journey to master real-world backend engineering, scalable systems, and Kubernetes deployment.
+### This project is part of my journey to master real-world backend engineering, scalable systems, and Kubernetes deployment.
 
-🚀 Tech Stack
+## 🚀 Tech Stack
 
-Node.js
+## Node.js | TypeScript | Express | MongoDB | JWT Authentication | Docker | Kubernetes | NATS Streaming | NextJs | Skaffold |  Ingress-nginx
 
-TypeScript
-
-Express
-
-MongoDB
-
-JWT Authentication
-
-Docker
-
-Kubernetes
-
-NATS Streaming (coming soon)
-
-✅ Current Progress (Day 1)
+### ✅ Current Progress (Day 1) - Create a setup
 
 Setup Express server
 
@@ -35,24 +19,6 @@ Added basic routes (signup, signin, signout, current-users)
 Created project structure for auth service
 
 Initialized repository structure (auth, infra)
-
-🔜 Next Steps (Upcoming)
-
-Add MongoDB user model
-
-Complete signup/signin validation
-
-Implement JWT + cookie session
-
-Add full Auth service
-
-Add Tickets service
-
-Implement NATS event bus
-
-Deploy via Kubernetes
-
-Add frontend (Next.js SSR)
 
 📁 Project Structure
 ticketing-microservices/
@@ -65,7 +31,7 @@ ticketing-microservices/
 I will be updating this repo daily as I build the entire microservices platform.
 
 ---
-### ✅ Current Progress (Day 2)
+### ✅ Current Progress (Day 2) - hashing | ingress-nginx setup | K8s
 
 - Added strongly-typed Mongoose user model using `UserAttrs`, `UserDoc`, and `UserModel`
 - Implemented secure password hashing in `pre('save')` middleware
@@ -77,7 +43,8 @@ I will be updating this repo daily as I build the entire microservices platform.
 - Reset and rebuilt a fully clean local Docker + K8s environment for development stability
 
 ---
-✅ Current Progress (Day 3) — Auth Service Completed
+
+### ✅ Current Progress (Day 3) — Auth Service Completed
 
 Today I completed the full Auth microservice, including all authentication flows and production-ready patterns:
 
@@ -125,7 +92,7 @@ POST   /api/users/signout
 GET    /api/users/currentuser
 
 
-### ✅ Current Progress (Day 3)
+### ✅ Current Progress (Day 4) - Ticketing setup | Ticketing Mongoose
 
 Today I completed the setup of the Tickets microservice, extended the infrastructure, and ensured everything works end-to-end inside Kubernetes with Skaffold.
 
