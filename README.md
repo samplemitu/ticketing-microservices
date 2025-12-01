@@ -125,3 +125,58 @@ POST   /api/users/signout
 GET    /api/users/currentuser
 
 
+### ✅ Current Progress (Day 3)
+
+Today I completed the setup of the Tickets microservice, extended the infrastructure, and ensured everything works end-to-end inside Kubernetes with Skaffold.
+
+The Tickets service is now fully scaffolded with all core CRUD features needed for a production-ready event marketplace.
+This service uses its own MongoDB, its own schema, its own routes, and follows the same strict TypeScript + Mongoose patterns established in the Auth service.
+
+🧱 Tickets Service Backend Features
+
+✅ 1. Create Ticket (POST /api/tickets)
+
+Validates input (title, price)
+Requires authentication
+Saves ticket to MongoDB
+
+
+✅ 2. Update Ticket (PUT /api/tickets/:id)
+
+Requires authentication
+User can update only his own ticket
+Validates updated fields
+Updates the ticket in MongoDB
+
+
+✅ 3. Show Ticket (GET /api/tickets/:id)
+
+Fetch ticket by MongoDB ID
+Returns 404 if not found
+
+✅ 4. List All Tickets (GET /api/tickets)
+
+Returns all tickets currently stored
+Includes pagination-ready structure (future upgrade)
+
+
+## 🍃 Tickets Mongoose Model — Type-Safe & Production-Ready
+
+Just like Auth, Tickets service uses:
+TicketAttrs → attributes required to create a ticket
+TicketDoc → properties inside a Ticket document
+TicketModel → static build function for type-safe creation
+
+🔌 Routes Included
+
+POST   /api/tickets        (Create Ticket)
+PUT    /api/tickets/:id    (Update Ticket)
+GET    /api/tickets/:id    (Show Ticket)
+GET    /api/tickets        (List All Tickets)
+
+Shared Middlewares:
+
+requireAuth
+validateRequest
+currentUser
+NotFoundError, BadRequestError, etc.
