@@ -1,8 +1,8 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { validateRequest } from '../../../auth/src/middlewares/validate-result';
+import { validateRequest } from '@samplemitu-common/common';
 import { Ticket } from '../models/ticket';
-import { NotFoundError } from '../../../auth/src/errors/not-found-error';
+import { NotFoundError } from '@samplemitu-common/common';
 import { NotAuthorizedError } from '@rallycoding/common';
 
 const router = express.Router();
@@ -24,7 +24,7 @@ router.put(
     }
 
     if (ticket.userId !== req.currentUser!.id) {
-      throw new NotAuthorizedError(); // Need to make custom error
+      throw new NotAuthorizedError(); 
     }
 
     ticket.set({

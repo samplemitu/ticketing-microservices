@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
-import { validateRequest } from '../../../auth/src/middlewares/validate-result';
+import { validateRequest } from '@samplemitu-common/common';
 import { Ticket } from '../models/ticket';
 
 const router = express.Router();
