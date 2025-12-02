@@ -147,3 +147,47 @@ requireAuth
 validateRequest
 currentUser
 NotFoundError, BadRequestError, etc.
+
+### 🚀 Day 5 — Shared Common Package + NPM Integration Completed
+
+#### 📦 1. Created “Common” Shared Library (Published to NPM)
+
+I built a full shared library that centralizes code used by multiple services:
+
+Included in the shared package:
+
+Custom error classes (BadRequestError, NotFoundError, CustomError, etc.)
+
+Request validation middleware
+
+Authentication helpers (currentUser, requireAuth)
+
+Error handler middleware
+
+Strong TypeScript types
+
+Clean exports through index.ts
+
+Package published to NPM:
+
+@samplemitu-common/common
+
+#### 🔁 2. Refactored Auth & Tickets Services
+
+Both Auth and Tickets services were using duplicated versions of:
+
+error classes
+
+middlewares
+
+request validators
+
+auth helpers
+
+#### Today I removed all duplicated folder
+
+auth/src/errors/
+auth/src/middlewares/
+
+tickets/src/errors/
+tickets/src/middlewares/

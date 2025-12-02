@@ -2,8 +2,8 @@ import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import { User } from '../models/user';
 import jwt from 'jsonwebtoken';
-import { validateRequest } from '../middlewares/validate-result';
-import { BadRequestError } from '../errors/bad-request-error';
+import { validateRequest } from '@samplemitu-common/common';
+import { BadRequestError } from '@samplemitu-common/common';
 
 const router = express.Router();
 
