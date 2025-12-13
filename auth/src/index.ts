@@ -43,9 +43,8 @@ const start = async () => {
   } catch (err) {
     console.error(err);
   }
-  app.listen(8000, () => {
-    console.log('app listining on port 8000');
-  });
+  console.log('app listining on port 8000');
+  app.listen(3000, () => {});
 };
 
 start();
