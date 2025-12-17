@@ -6,7 +6,7 @@
 
 ## 🚀 Tech Stack
 
-## Node.js | TypeScript | Express | MongoDB | JWT Authentication | Docker | Kubernetes | NATS Streaming | NextJs | Skaffold |  Ingress-nginx
+## Node.js | TypeScript | Express | MongoDB | JWT Authentication | Docker | Kubernetes | NATS Streaming | NextJs | Skaffold |  Ingress-nginx.
 
 ### ✅ Current Progress (Day 1) - Create a setup
 
