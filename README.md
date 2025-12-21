@@ -1,5 +1,5 @@
 # Ticketing-microservices Project
-## A production-grade, event-driven ticketing platform built with a microservices architecture.
+## A production-grade, event-driven ticketing platform built with a microservices architecture
 
 ### This project is part of my journey to master real-world backend engineering, scalable systems, and Kubernetes deployment.
 
