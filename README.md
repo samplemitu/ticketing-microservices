@@ -6,7 +6,7 @@
 
 ## Node.js | TypeScript | Express | MongoDB | JWT Authentication | Docker | Kubernetes | NATS Streaming | NextJs | Skaffold |  Ingress-nginx.
 
-### ✅ Current Progress (Day 1) - Create a setup
+### ✅ Current Progress (Day 1) - 
 
 Setup Express server
 
