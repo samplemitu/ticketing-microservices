@@ -1,6 +1,5 @@
 # Ticketing-microservices Project
 
-### This project is part of my journey to master real-world backend engineering, scalable systems, and Kubernetes deployment.
 
 ## 🚀 Tech Stack
 
