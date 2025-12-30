@@ -7,7 +7,7 @@
 
 ### ✅ Current Progress (Day 1) - 
 
-Setup Express server
+=
 
 Implemented password hashing (bcrypt)
 
