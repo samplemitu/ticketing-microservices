@@ -187,4 +187,4 @@ auth/src/errors/
 auth/src/middlewares/
 
 tickets/src/errors/
-tickets/src/middlewares/
+
