@@ -186,5 +186,4 @@ auth helpers
 auth/src/errors/
 auth/src/middlewares/
 
-tickets/src/errors/
 
